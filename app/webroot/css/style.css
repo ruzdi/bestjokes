@@ -1,0 +1,63 @@
+/* 
+    Document   : style
+    Created on : May 27, 2012, 3:23:12 AM
+    Author     : Ruzdi
+    Description:
+        This stylesheet styles for the site and also update bootstrap css and update reposive gallery
+*/
+
+/* ------------------------------- HEADER ----------------------------------- */
+@font-face {
+  font-family: 'arimo';
+  font-style: normal;
+  font-weight: normal;
+  src: url('fonts/arimo/Arimo-Regular-Latin.ttf')
+/*  src: local('Arimo-Regular-Latin.ttf'), local('Arimo-Regular-Latin.ttf'), url('http://themes.googleusercontent.com/static/fonts/pacifico/v4/yunJt0R8tCvMyj_V4xSjafesZW2xOQ-xsNqO47m55DA.woff') format('woff');*/
+}
+
+@font-face {
+  font-family: 'arimo-italic';
+  font-style: normal;
+  font-weight: normal;
+  src: url('fonts/arimo/Arimo-Italic-Latin.ttf')
+}
+@font-face {
+  font-family: 'arimo-bolditalic';
+  font-style: normal;
+  font-weight: normal;
+  src: url('fonts/arimo/Arimo-BoldItalic-Latin.ttf')
+}
+@font-face {
+  font-family: 'arimo-bold';
+  font-style: normal;
+  font-weight: normal;
+  src: url('fonts/arimo/Arimo-Bold-Latin.ttf')
+}
+
+body {
+    color: #333333;
+    font-family: arimo, "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 11px;
+    line-height: 18px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: arimo-bold, arimo, "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-weight: normal;
+}
+
+h3{
+    font-weight: normal;
+    font-family: arimo, "Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+
+h4{
+    font-family: arimo, "Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+
+p {
+    font-family: arimo, "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 11px;
+    line-height: 18px;
+    margin: 0 0 9px;
+}
