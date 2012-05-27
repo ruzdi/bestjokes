@@ -27,11 +27,11 @@
                 </tr>
                 <tr>
                     <th><?php echo __('Update Date'); ?></th>
-                    <td><?php echo h($joke['Joke']['update_date']); ?>&nbsp;</td>
+                    <td><?php echo h(date("D M j, Y, g:i a", strtotime($joke['Joke']['update_date']))); ?>&nbsp;</td>
                 </tr>
                 <tr>
                     <th><?php echo __('Create Date'); ?></th>
-                    <td><?php echo h($joke['Joke']['create_date']); ?>&nbsp;</td>
+                    <td><?php echo h(date("D M j, Y, g:i a", strtotime($joke['Joke']['create_date']))); ?>&nbsp;</td>
                 </tr>                
             </tbody>
         </table>

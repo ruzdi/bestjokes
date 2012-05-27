@@ -1,25 +1,13 @@
 <?php
 /**
- * Application level Controller
- *
- * This file is application-wide controller file. You can put all
- * application-wide controller-related methods here.
- *
- * PHP 5
- *
- * CakePHP(tm) : Rapid Development Framework (http://cakephp.org)
- * Copyright 2005-2012, Cake Software Foundation, Inc. (http://cakefoundation.org)
- *
- * Licensed under The MIT License
- * Redistributions of files must retain the above copyright notice.
- *
- * @copyright     Copyright 2005-2012, Cake Software Foundation, Inc. (http://cakefoundation.org)
- * @link          http://cakephp.org CakePHP(tm) Project
- * @package       app.Controller
- * @since         CakePHP(tm) v 0.2.9
- * @license       MIT License (http://www.opensource.org/licenses/mit-license.php)
+ * *****************************************************************************
+ * File: AppController.php
+ * Description: This controller is for global management
+ * Create Date: May 27, 2012
+ * @author Md. Ruzdi Islam  
+ * @copyright Copyright © 2012 Artomus , All rights reserved
+ * ***************************************************************************
  */
-
 App::uses('Controller', 'Controller');
 
 /**
@@ -42,6 +30,12 @@ class AppController extends Controller {
     public $language_id = null;
     
     public $useridentity = null;
+    
+    /**
+     * Setting up the layout
+     *  @param null
+     *  @return null
+     */
 
     function beforeFilter() {
 
@@ -53,17 +47,16 @@ class AppController extends Controller {
         	$this->layout = "public/layout";
         }
         
-        $lang = Configure::read('default_language');
+        /*$lang = Configure::read('default_language');
         
         if(!$this->Session->check("language")){
-            //$this->Session->del("language");
             $this->Session->write("language", $lang);
         }
         
         $this->language_id = 1;
         $this->Session->write("langId", 1);
         
-        Configure::write('Config.language', $lang);
+        Configure::write('Config.language', $lang);*/
         
         if ((substr($this->params['controller'], 0, 6) != 'admin_') && !empty($this->request->data)) {
             array_walk_recursive($this->request->data, array($this, 'whitespace'));
@@ -72,19 +65,14 @@ class AppController extends Controller {
         
     }
 
+    /**
+     * Setting up project and other url
+     * 
+     *  @param null
+     *  @return null
+     */
     function beforeRender() {
-        
-        $this->set('defaultContentLayout', true);
-        
-        $project_url = "http" . ((!empty($_SERVER['HTTPS'])) ? "s" : "")."://" . $_SERVER['SERVER_NAME'].$this->webroot;
-        $current_method_url = "http" . ((!empty($_SERVER['HTTPS'])) ? "s" : "")."://" . $_SERVER['SERVER_NAME'].$this->webroot.$this->params['controller'].DIRECTORY_SEPARATOR.$this->params['action'] . DIRECTORY_SEPARATOR;
-        $current_url = "http" . ((!empty($_SERVER['HTTPS'])) ? "s" : "")."://" . $_SERVER['SERVER_NAME'].$_SERVER['REQUEST_URI'];
-        
-        $this->set('project_url', $project_url);
-        $this->set('current_method_url', $current_method_url);
-        $this->set('current_url', $current_url);
-        
-        
+               
         /**
          *  sample code of flash message
          */
@@ -94,21 +82,22 @@ class AppController extends Controller {
         //$this->Session->setFlash('Something like success.', 'flash/success_flash', null, 'success');
         //$this->Session->setFlash('Something like welcome.', 'flash/welcome_flash', null, 'welcome');  
         
-        /**
-         *  sample code of setting default header
-         */
-        //$this->set('defaultContentHeader', __d('default','lblDefaultContentHeader'));
-        
         
     }
 
+    /**
+     * Check user is login or not and also setup user and other necessary veriable
+     * 
+     *  @param null
+     *  @return null
+     */
     private function validateLoginStatus() {
 
         $useridentity = CakeSession::read('User.identity');
         if($this->params['controller'] != 'admin_dashbords' && !in_array($this->params['action'], array('login') )){         
             if (empty($useridentity['User'])) {                
                 if(substr($this->params['controller'], 0, 6) == 'admin_'){            
-                    $this->redirect('/admin_dashbords/login');
+                    $this->redirect('/admin/');
                 }else{
                     //$this->redirect('/');
                 }
@@ -120,7 +109,7 @@ class AppController extends Controller {
         $username = NULL;
         if(!$hasIdentity && ($this->params['controller'] != 'admin_dashbords' && $this->params['action'] != 'login') ){            
             if(substr($this->params['controller'], 0, 6) == 'admin_'){            
-                $this->redirect('/admin_dashbords/login');
+                $this->redirect('/admin/');
             }else{
                 //$this->redirect('/');
             }
@@ -138,6 +127,13 @@ class AppController extends Controller {
         
     }
 
+    /**
+     * is used for cleaning the whitespace and html tags
+     * 
+     *  @param $value value of the each array item
+     *  @param $key value of the  each array item
+     *  @return null
+     */
     function whitespace(&$value, &$key) {
         $key = trim($key);
         $value = trim($value);

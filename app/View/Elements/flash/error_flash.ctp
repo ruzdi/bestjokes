@@ -1,1 +1,1 @@
-<h4 class="alert_error"><?php echo $message; ?></h4>
+<h4 class="alert_error error"><?php echo $message; ?></h4>

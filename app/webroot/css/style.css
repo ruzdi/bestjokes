@@ -7,33 +7,6 @@
 */
 
 /* ------------------------------- HEADER ----------------------------------- */
-@font-face {
-  font-family: 'arimo';
-  font-style: normal;
-  font-weight: normal;
-  src: url('fonts/arimo/Arimo-Regular-Latin.ttf')
-/*  src: local('Arimo-Regular-Latin.ttf'), local('Arimo-Regular-Latin.ttf'), url('http://themes.googleusercontent.com/static/fonts/pacifico/v4/yunJt0R8tCvMyj_V4xSjafesZW2xOQ-xsNqO47m55DA.woff') format('woff');*/
-}
-
-@font-face {
-  font-family: 'arimo-italic';
-  font-style: normal;
-  font-weight: normal;
-  src: url('fonts/arimo/Arimo-Italic-Latin.ttf')
-}
-@font-face {
-  font-family: 'arimo-bolditalic';
-  font-style: normal;
-  font-weight: normal;
-  src: url('fonts/arimo/Arimo-BoldItalic-Latin.ttf')
-}
-@font-face {
-  font-family: 'arimo-bold';
-  font-style: normal;
-  font-weight: normal;
-  src: url('fonts/arimo/Arimo-Bold-Latin.ttf')
-}
-
 body {
     padding-top: 60px;
     color: #333333;
@@ -61,4 +34,113 @@ p {
     font-size: 11px;
     line-height: 18px;
     margin: 0 0 9px;
+}
+
+div.container{
+    
+}
+
+
+div.mypagination{
+    padding: 5px;
+    border: 1px solid #cccccc;
+    background:#f5f5f5;
+    margin-top: 30px;
+    text-align: center;
+}
+
+div.mypagination{
+    
+}
+
+.sortinglist{
+    padding: 5px;    
+}
+
+
+
+
+.box_shadow {
+  -webkit-box-shadow: 1px -2px 15px -4px #35353b; /* Saf3-4, iOS 4.0.2 - 4.2, Android 2.3+ */
+          box-shadow: 1px -2px 15px -4px #35353b; /* Opera 10.5, IE9, FF4+, Chrome 6+, iOS 5 */
+}
+
+
+.box_round {
+  -webkit-border-radius: 12px; /* Saf3-4, iOS 1-3.2, Android ≤1.6 */
+          border-radius: 12px; /* Opera 10.5, IE9, Saf5, Chrome, FF4+, iOS 4, Android 2.1+ */
+
+  /* useful if you don't want a bg color from leaking outside the border: */
+  -moz-background-clip: padding; -webkit-background-clip: padding-box; background-clip: padding-box;
+}
+
+
+/* Alerts */
+
+h4.alert_info {
+    display: block;
+    width: 95%;
+    margin: 20px 3% 0 3%;
+    margin-top: 20px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    background: #B5E5EF url(../img/icn_alert_info.png) no-repeat;
+    background-position: 10px 10px;
+    border: 1px solid #77BACE;
+    color: #082B33;
+    padding: 10px 0;
+    text-indent: 40px;
+    font-size: 14px;
+}
+
+h4.alert_warning {
+    display: block;
+    width: 95%;
+    margin: 20px 3% 0 3%;
+    margin-top: 20px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    background: #F5F3BA url(../img/icn_alert_warning.png) no-repeat;
+    background-position: 10px 10px;
+    border: 1px solid #C7A20D;
+    color: #796616;
+    padding: 10px 0;
+    text-indent: 40px;
+    font-size: 14px;
+}
+
+h4.alert_error {
+    display: block;
+    width: 95%;
+    margin: 20px 3% 0 3%;
+    margin-top: 20px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    background: #F3D9D9 url(../img/icn_alert_error.png) no-repeat;
+    background-position: 10px 10px;
+    border: 1px solid #D20009;
+    color: #7B040F;
+    padding: 10px 0;
+    text-indent: 40px;
+    font-size: 14px;
+}
+
+h4.alert_success {
+    display: block;
+    width: 95%;
+    margin: 20px 3% 0 3%;
+    margin-top: 20px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    background: #E2F6C5 url(../img/icn_alert_success.png) no-repeat;
+    background-position: 10px 10px;
+    border: 1px solid #79C20D;
+    color: #32510F;
+    padding: 10px 0;
+    text-indent: 40px;
+    font-size: 14px;
 }

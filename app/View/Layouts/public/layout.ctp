@@ -1,11 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <meta charset="utf-8">
         <title>Best Jokes</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+                
+        <!-- All in one META pack -->
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta http-equiv="description" content="Best Jokes" />
+        <meta http-equiv="keywords" content="Best Jokes" />
         <meta name="description" content="Best Jokes" />
-        <meta name="author" content="" />
+        <meta name="copyright" content="Copyright (c) 2012 Artomus. All rights reserved." />
+        <meta name="revisit-after" content="1 days" />
+        <meta name="robots" content="index, follow" />
+        <meta name="googlebot" content="index, follow" />
+        <meta http-equiv="Content-Language" content="en" />
+        <meta http-equiv="Content-Style-Type" content="text/css" />
+        <meta http-equiv="Content-Script-Type" content="text/javascript" />
+        <meta name="author" content="ruzdi" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />                     
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" /> 
+        <!-- /All in one META pack -->        
+        <link rel="canonical" href="http://bestjokes.artomus.com/" /> 
+        
 
         <!-- Le styles -->
         <link href="<?php echo $this->webroot; ?>css/bootstrap.css" rel="stylesheet" />
@@ -20,7 +35,7 @@
         <![endif]-->
 
         <!-- Le fav and touch icons -->
-        <link rel="shortcut icon" href="assets/css/twitter-bootstrap/ico/favicon.ico">
+        <link rel="shortcut icon" href="<?php echo $this->webroot . 'images/ico/favicon.png'; ?>" />
         <link rel="apple-touch-icon-precomposed" sizes="144x144" href="<?php echo $this->webroot; ?>images/ico/apple-touch-icon-144-precomposed.png" />
         <link rel="apple-touch-icon-precomposed" sizes="114x114" href="<?php echo $this->webroot; ?>images/ico/apple-touch-icon-114-precomposed.png" />
         <link rel="apple-touch-icon-precomposed" sizes="72x72" href="<?php echo $this->webroot; ?>images/ico/apple-touch-icon-72-precomposed.png" />
@@ -38,10 +53,10 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </a>
-                    <a class="brand" href="#">Best Jokes </a>
+                    <a class="brand" href="<?php echo $this->webroot; ?>">Best Jokes </a>
                     <div class="nav-collapse">
                         <ul class="nav">
-                            <li class="active"><a href="#">Home</a></li>
+                            <li class="active"><a href="<?php echo $this->webroot; ?>">Home</a></li>
                         </ul>
                     </div>
                 </div>
@@ -53,13 +68,14 @@
 
             <!-- Main hero unit for a primary marketing message or call to action -->
             <div class="hero-unit">
-                <h1>Best Jokes!</h1>
-                <p>Hello, Everyone! Welcome to best jokes.</p>                
+                <div class="span2 pull-right"><img height="100px;" class="" src="<?php echo $this->webroot . 'images/logo.jpg'; ?>" alt="Smile:-)" /></div>
+                <h1>Best Jokes! </h1>
+                <p>Hello, Everyone! Welcome to best jokes.</p>
             </div>
 
             <!-- Example row of columns -->
             <?php echo $content_for_layout; ?>
-            
+
             <hr>
 
             <footer>
@@ -74,7 +90,7 @@
         <!-- Le javascript
         ================================================== -->
         <!-- Placed at the end of the document so the pages load faster -->
-    <!--    <script src="<?php echo $this->webroot; ?>js/jquery.js"></script>
+        <script src="<?php echo $this->webroot; ?>js/jquery-1.7.2.min.js"></script>
         <script src="<?php echo $this->webroot; ?>js/bootstrap-transition.js"></script>
         <script src="<?php echo $this->webroot; ?>js/bootstrap-alert.js"></script>
         <script src="<?php echo $this->webroot; ?>js/bootstrap-modal.js"></script>
@@ -86,7 +102,9 @@
         <script src="<?php echo $this->webroot; ?>js/bootstrap-button.js"></script>
         <script src="<?php echo $this->webroot; ?>js/bootstrap-collapse.js"></script>
         <script src="<?php echo $this->webroot; ?>js/bootstrap-carousel.js"></script>
-        <script src="<?php echo $this->webroot; ?>js/bootstrap-typeahead.js"></script>-->
+        <script src="<?php echo $this->webroot; ?>js/bootstrap-typeahead.js"></script>
+
+        <script src="<?php echo $this->webroot; ?>layouts/public/js/public.js"></script>
 
     </body>
 </html>

@@ -1,1 +1,1 @@
-<h4 class="alert_warning"><?php echo $message; ?></h4>
+<h4 class="alert_warning warning"><?php echo $message; ?></h4>

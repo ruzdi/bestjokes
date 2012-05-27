@@ -1,4 +1,5 @@
 <?php
+
 /**
  * *****************************************************************************
  * File: HomeController.php
@@ -16,29 +17,31 @@ App::uses('AppController', 'Controller');
  * @property Joke $Joke
  */
 class HomeController extends AppController {
-    
+
     public $helpers = array('Html', 'Form');
     public $name = 'Home';
     public $uses = array('Joke', 'User', 'Role');
-    
+    //setting the parameter for pagination
     public $paginate = array(
-        'limit' => 3,
+        'limit' => 6,
         'order' => array(
             'Joke.create_date' => 'desc'
         )
     );
 
     /**
-     * index method
-     *
+     * index method displaying the home page
+     * 
+     * @param null
      * @return void
      */
     public function index() {
-        $this->Joke->recursive = 0;
-        $this->set('jokes', $this->paginate());
-        $roles = $this->User->Role->find('list', array('fields' => array('Role.id', 'Role.title')));
-        $this->set(compact('roles'));
+        try {
+            $this->Joke->recursive = 0;
+            $this->set('jokes', $this->paginate());
+        } catch (Exception $e) {
+            
+        }
     }
-
 
 }

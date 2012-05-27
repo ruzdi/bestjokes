@@ -1,11 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <meta charset="utf-8">
-        <title>Best Jokes Admin</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="description" content="Best Jokes Admin">
-        <meta name="author" content="">
+        <title>Best Jokes</title>
+                
+        <!-- All in one META pack -->
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta http-equiv="description" content="Best Jokes" />
+        <meta http-equiv="keywords" content="Best Jokes" />
+        <meta name="description" content="Best Jokes" />
+        <meta name="copyright" content="Copyright (c) 2012 Artomus. All rights reserved." />
+        <meta name="revisit-after" content="1 days" />
+        <meta name="robots" content="index, follow" />
+        <meta name="googlebot" content="index, follow" />
+        <meta http-equiv="Content-Language" content="en" />
+        <meta http-equiv="Content-Style-Type" content="text/css" />
+        <meta http-equiv="Content-Script-Type" content="text/javascript" />
+        <meta name="author" content="ruzdi" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />                     
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" /> 
+        <!-- /All in one META pack -->        
+        <link rel="canonical" href="http://bestjokes.artomus.com/" /> 
 
         <!-- Le styles -->
         <link href="<?php echo $this->webroot; ?>css/bootstrap.css" rel="stylesheet" />
@@ -51,27 +65,35 @@
                             <li class="pull-right"><a href="<?php echo $this->webroot; ?>admin/logout">Logout</a></li>
                         </ul>
                     </div>
-<!--                    <div class="btn-group pull-right">
-                        <a href="#" data-toggle="dropdown" class="btn dropdown-toggle">
-                            <i class="icon-user"></i> <?php echo $username; ?>
-                            <span class="caret"></span>
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a href="<?php echo $this->webroot; ?>admin/logout">Logout</a></li>
-                        </ul>
-                    </div> -->
-                    
                 </div>
             </div>
         </div>
-        
+
 
         <div class="container">
+            
+            <div class="row">
+                <div class="span12">
+                    <?php echo $this->Session->flash('welcome'); ?>
+                    <?php echo $this->Session->flash('success'); ?>
+                    <?php echo $this->Session->flash('warning'); ?>
+                    <?php echo $this->Session->flash('error'); ?>   
+                </div>
+            </div>
+            
             <div class="row">
                 <div class="span12" >
                     <?php echo $content_for_layout; ?>
                 </div>
             </div>
+            
+<!--            <div class="row">
+                <div class="span12" >
+                    < ?php echo $this->element('sql_dump'); ?>
+                </div>
+            </div>-->
+            
+            
 
         </div> <!-- /container -->
 
@@ -79,10 +101,12 @@
         ================================================== -->
         <!-- Placed at the end of the document so the pages load faster -->
         <script src="<?php echo $this->webroot; ?>js/jquery-1.7.2.min.js"></script>
+        <script src="<?php echo $this->webroot; ?>js/bootstrap-dropdown.js"></script>
+
         <script src="<?php echo $this->webroot; ?>js/bootstrap-transition.js"></script>
         <script src="<?php echo $this->webroot; ?>js/bootstrap-alert.js"></script>
         <script src="<?php echo $this->webroot; ?>js/bootstrap-modal.js"></script>
-        <script src="<?php echo $this->webroot; ?>js/bootstrap-dropdown.js"></script>
+
         <script src="<?php echo $this->webroot; ?>js/bootstrap-scrollspy.js"></script>
         <script src="<?php echo $this->webroot; ?>js/bootstrap-tab.js"></script>
         <script src="<?php echo $this->webroot; ?>js/bootstrap-tooltip.js"></script>
@@ -92,12 +116,8 @@
         <script src="<?php echo $this->webroot; ?>js/bootstrap-carousel.js"></script>
         <script src="<?php echo $this->webroot; ?>js/bootstrap-typeahead.js"></script>
 
-        <script type="text/javascript" >
-            jQuery.ready(function(){
-                jQuery('.dropdown-toggle').dropdown()
-            });
-            
-        </script>
+        <script src="<?php echo $this->webroot; ?>layouts/admin/js/admin.js"></script>
+
 
     </body>
 </html>

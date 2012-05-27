@@ -120,5 +120,28 @@ class User extends AppModel {
             'counterQuery' => ''
         )
     );
+    
+    /**
+     * This function will check user login information
+     * 
+     * @param string $user
+     * @param string $password
+     * @return 
+     *      if success return user data array
+     *      if fail return false
+     */
+    public function checkUserLoginInformation($user, $password) {
+        try {
+            $sql = "SELECT `User`.`id`, `User`.`user`, `User`.`email`, `User`.`role_id`, `User`.`is_active`, `Role`.`id`, `Role`.`role`, `Role`.`title`, `Role`.`detail` FROM `users` AS `User` LEFT JOIN `roles` AS `Role` ON (`User`.`role_id` = `Role`.`id`) WHERE `User`.`user` = '{$user}' AND `User`.`password` = SHA1(CONCAT('{$password}',salt)) AND `User`.`is_active` = '1' LIMIT 1";
+            $userRow = $this->query($sql);
+            
+            if (count($userRow) > 0) {
+                return $userRow[0];
+            }
+            return -1;
+        } catch (Exception $e) {
+            return -1;
+        }
+    }
 
 }
