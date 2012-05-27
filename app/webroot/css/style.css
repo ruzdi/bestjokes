@@ -35,28 +35,29 @@
 }
 
 body {
+    padding-top: 60px;
     color: #333333;
-    font-family: arimo, "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
     font-size: 11px;
     line-height: 18px;
 }
 
 h1, h2, h3, h4, h5, h6 {
-    font-family: arimo-bold, arimo, "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
     font-weight: normal;
 }
 
 h3{
     font-weight: normal;
-    font-family: arimo, "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
 }
 
 h4{
-    font-family: arimo, "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
 }
 
 p {
-    font-family: arimo, "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
     font-size: 11px;
     line-height: 18px;
     margin: 0 0 9px;
